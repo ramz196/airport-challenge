@@ -6,7 +6,7 @@ const assertFalse = actualResult => actualResult === false;
 
 function assertNull(actualResult) {
     return actualResult === null
-}
+};
 
 module.export = {
     assertEquals,
