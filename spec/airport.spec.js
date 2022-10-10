@@ -6,8 +6,8 @@ let actual;
 let result;
 let airport;
 let plane;
-let plane1;
 let sizeIncrease;
+
 
 
 // Test 1 - has the plane landed in the airport?
@@ -24,7 +24,7 @@ expected = 1;
 airport.add(plane);
 actual = airport.airportPlanes.length;
 //Assert
-result = (actual,expected);
+result = assertEquals(actual, expected);
 console.log(`Test 1:add plane to the airport: ${result}`);
 //Clean up
 airport = null;
@@ -72,6 +72,31 @@ actual = airport.add(plane);
 //Assert
 result =  (actual,expected);
 console.log(`airport is full you can't land: ${result}`);
+//Clean up
+airport = null;
+plane = null;
+expected = undefined;
+actual = undefined;
+result = undefined;
+
+// Test 4 -  instruct plane to take off and confirm it's not at airport?
+console.log(`============================`);
+
+console.log(`Test 4 - instruct plane to take off`);
+
+//Arrange
+airport = new Airport();
+item = {id: `plane`}
+expected = 'The Airport is at maximum capacity';
+//Act
+airport.add(plane);
+airport.add(plane);
+airport.add(plane);
+airport.add(plane);
+actual = airport.add(plane);
+//Assert
+result =  (actual,expected);
+console.log(`instruct plane to take off: ${result}`);
 //Clean up
 airport = null;
 plane = null;

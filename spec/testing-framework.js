@@ -12,7 +12,7 @@ function assertNull(actualResult) {
     return actualResult === null;
 }
 
-module.export = {
+module.exports = {
     assertEquals ,
     assertFalse,
     assertNull,

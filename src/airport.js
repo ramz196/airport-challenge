@@ -1,9 +1,9 @@
 class Airport {
 
-  // airportPlanes = [];
-   capacity = 4;
+  airportPlanes ;
+ capacity ;
 
-  constructor(capacity) {
+  constructor(capacity = 4) {
     this.airportPlanes = [];
   this.capacity = capacity;
   }
@@ -15,13 +15,17 @@ class Airport {
       this.airportPlanes.push(plane)
     }
     else {
-      subtract = plane => {
-
-        this.airportPlanes.splice(this.airportPlanes.indexOf(plane))
-      };
+     return 'Airport capacity is full'
     }
   }
+ subtract = plane => {
+
+   this.airportPlanes.splice(this.airportPlanes.indexOf(plane));
+  } 
+
+  
+
 }
 
 
-module.export = Airport
+module.exports = Airport
