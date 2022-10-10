@@ -6,6 +6,7 @@ let actual;
 let result;
 let airport;
 let plane;
+let plane1;
 let sizeIncrease;
 
 
