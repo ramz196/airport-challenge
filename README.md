@@ -89,6 +89,31 @@ To count planes easily
 Planes that have landed must be at an airport
 ```
 
-Your task is to test drive the creation of a set of classes/objects to satisfy all the above user stories. You will need to use a random number generator to set the weather (it is normally sunny but on rare occasions it may be stormy). In your tests, you'll need to stub random behaviour to ensure consistent test behaviour.
+Your task is to test dive the creation of a set of classes/objects to satisfy all the above user stories. You will need to use a random number generator to set the weather (it is normally sunny but on rare occasions it may be stormy). In your tests, you'll need to stub random behaviour to ensure consistent test behaviour.
 
 Your code should defend against [edge cases](http://programmers.stackexchange.com/questions/125587/what-are-the-difference-between-an-edge-case-a-corner-case-a-base-case-and-a-b) such as inconsistent states of the system ensuring that planes can only take off from airports they are in; planes that are already flying cannot take off and/or be in an airport; planes that are landed cannot land again and must be in an airport, etc.
+
+About the project
+Why does this project exist?
+This project was a culmination of the ideas taught to my cohort during the first week of our course. i created this project to gain further understanding of domain modelling and testing frameworks.
+
+When did you complete the project?
+Unfortunately i wasn't able to complete the project due to some issues i had come across when testing the framework for the 3rd test but i hope to complete this challenge within my own time.
+
+Built with
+A list of technologies and dependencies used in this project?
+i used github, visualstudio code and repositories i forked from bobs bagels to code.
+
+getting started
+How can the viewer set up the project locally?
+Using the github page from digital futures academy, fork the repository and create a folder in file explorer to open in visual studio code. Once the repository is cloned using the HTML link, open the terminal and type npm install to retrieve the folders associated with the file and begin to code.
+
+Problem statements
+For this challenge we are required to read the user stories detailed in the README file and create domain models to meet user requirements. Once complete create class for the airport to complete 1st test to add plane to the airport and continue from there.
+
+Project review and roadmap
+Why does this project exist?
+I have learned how to improve my coding using the domain models and testing framework. if i were to tackle this challenge again i would ask questions more directly related to my issues faced.
+
+where could this project go next?
+I can improve the testing framework for this project, so that implementing code would be easier using the skills learnt from the new sessions.
