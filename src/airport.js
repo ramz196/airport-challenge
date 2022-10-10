@@ -20,7 +20,7 @@ class Airport {
   }
  subtract = plane => {
 
-   this.airportPlanes.splice(this.airportPlanes.indexOf(plane));
+        this.airportPlanes.splice(this.airportPlanes.indexOf(plane));
   } 
 
   
