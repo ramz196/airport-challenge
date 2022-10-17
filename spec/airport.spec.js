@@ -171,3 +171,30 @@ plane1 = null;
 plane2 = null;
 plane3 = null;
 plane4 = null;
+
+// Test 7 -  will the airport say that a plane can land if not at full capacity?
+console.log(`============================`);
+
+console.log(`Test 7 - will departPlane remove a plane from airport`);
+
+//Arrange
+airport = new Airport();
+plane1 = new Plane(plane1)
+plane2 = new Plane(plane2)
+expected = '1';
+//Act
+airport.planeLanded(plane);
+airport.planeLanded(plane1);
+airport.planeDeparted(plane1);
+actual = airport.airportPlanes.length;
+//Assert
+result =  assertEquals(actual, expected);
+console.log(`Test 7 : will departPlane remove a plane from airport ${result}`);
+//Clean up
+airport = null;
+plane = null;
+expected = undefined;
+actual = undefined;
+result = undefined;
+plane1 = null;
+
