@@ -60,8 +60,8 @@ As an air traffic controller
 To ensure safety
 I want to prevent landing when the airport is full
 | object    |     properties              |     messages                  |     output     |
-|  airport  | airportPlanes@Array[@string]|is airport full?               | @boolean       |
-|           |  capacity @integer          | Airport is at maximum capacity| @boolean       |     
+|  airport  | airportPlanes@Array[@string]| Airport capacity is full?     | @boolean       |
+|           |  capacity @integer          | AirportisFull()               | @boolean       |     
 |  plane    |   id@string                 |                               |                |
 
 1. Test that if capacity of airport exceeds capacity, the plane will not be added to the array

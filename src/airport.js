@@ -1,13 +1,12 @@
 class Airport {
 
-  airportPlanes ;
+ airportPlanes ;
  capacity ;
 
   constructor(capacity = 4) {
     this.airportPlanes = [];
-  this.capacity = capacity;
+    this.capacity = capacity;
   }
-
 
   add = plane => {
     if (this.airportPlanes.length <
@@ -19,9 +18,15 @@ class Airport {
     }
   }
  subtract = plane => {
-
         this.airportPlanes.splice(this.airportPlanes.indexOf(plane));
   } 
+  isAirportFull() { 
+    
+  }
+  planeLanded(plane) {
+    this.airportPlanes.push(plane);
+    return `The plane ${this.airportPlanes[0].planeID()} has landed`;
+  }
 
   
 

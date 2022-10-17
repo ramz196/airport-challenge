@@ -1,5 +1,7 @@
 const { assertEquals } = require('./testing-framework');
+const { assertTrue } = require('./testing-framework');
 const Airport = require('../src/airport');
+const Plane = require('../src/plane');
 
 let expected;
 let actual;
@@ -101,3 +103,35 @@ plane = null;
 expected = undefined;
 actual = undefined;
 result = undefined;
+
+// Test 5 -  will the airport return true if the airport is full?
+console.log(`============================`);
+
+console.log(`Test 4 - testing the isAirportfull function to return true at full capacity`);
+
+//Arrange
+airport = new Airport();
+plane = new plane(plane1)
+plane = new plane(plane2)
+plane = new plane(plane3)
+plane = new plane(plane4)
+expected = true;
+//Act
+airport.planeLanded(plane1);
+airport.planeLanded(plane2);
+airport.planeLanded(plane3);
+airport.planeLanded(plane4);
+actual = airport.isAirportFull();
+//Assert
+result =  assertTrue(actual);
+console.log(`Test 5 : testing the isAirportfull function to return true at full capacity ${result}`);
+//Clean up
+airport = null;
+plane = null;
+expected = undefined;
+actual = undefined;
+result = undefined;
+plane1 = null;
+plane2 = null;
+plane3 = null;
+plane4 = null;
