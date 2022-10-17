@@ -41,37 +41,54 @@ As an air traffic controller
 So I can get passengers to a destination
 I want to instruct the airport to land a plane
 | object    |     properties              |     messages                  |     output     |
-|  airport  | planesAirport@Array[@string]|Landplane(plane @string)       | @string        |
-|           |                             |isPlaneAtAirport(plane @string)|@boolean        |
+|  airport  | airportPlanes@Array[@string]|Landplane(plane @string)       | @string        |
+|           |                             |PlaneID(@string)|@boolean        |
 
-1.testing that plane is within array by testing length increases
-2. string should confirm the arrival of plane at airport
+1.Testing that plane is within array by testing length increases
+2. String should confirm the arrival of plane at airport
 
 As the system designer
 So that the software can be used for many different airports
 I would like a default airport capacity that can be overridden as appropriate
 | object    |     properties              |     messages                  |     output     |
-|  airport  | airportCapacity@integer     |constructor @integer)          | @void          |
+|  airport  | Capacity@integer            |constructor @integer)          | @void          |
 
-1.test that the default capacity is set for the airport
-2. test to make sure the capacity is changeable
+1.Test that the default capacity is set for the airport
+2.Test to make sure the capacity is changeable
+
 As an air traffic controller
 To ensure safety
 I want to prevent landing when the airport is full
 | object    |     properties              |     messages                  |     output     |
-|  airport  | planesAirport@Array[@string]|is airport full?               | @boolean       |
+|  airport  | airportPlanes@Array[@string]|is airport full?               | @boolean       |
+|           |  capacity @integer          | Airport is at maximum capacity| @boolean       |     
 |  plane    |   id@string                 |                               |                |
 
-1. test that if capacity of airport exceeds capacity, the plane will not be added to the array
+1. Test that if capacity of airport exceeds capacity, the plane will not be added to the array
 
 As an air traffic controller
 So I can get passengers on the way to their destination
 I want to instruct the airport to let a plane take off and confirm that it is no longer in the airport
 
+| object    |     properties              |     messages                  |     output     |
+|  airport  | airportPlanes@array[@string]| planeTakeoff@integer)         | @void          |
+|  plane    | flightID @string            |                               |                |
+
+1. Test that plane has taken off from Airport by checking the length of the airport has decreased
+2. Test that a string returns that the plane has departed from the airport and no longer exists. 
+
 As an air traffic controller
 To avoid confusion
 I want to prevent asking the airport to let planes take-off which are not at the airport, or land a plane that's already landed
 ```
+| object    |     properties              |     messages                  |     output     |
+|  airport  | airportPlanes@Array[@string]| planeLanded                   | @string        |
+|           |                             | planeDeparted                 | @string        |
+|           |                             | planeAlreadyExists            | @boolean       |
+|  plane    |   ID@string                 |                               |                |
+
+1. Testing that the plane has landed and exists within Airport to return a string
+2. Test that departed plane string appears when plane attempts to leave airport.
 
 #### Extended Acceptance Criteria
 
