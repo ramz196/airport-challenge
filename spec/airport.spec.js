@@ -68,7 +68,7 @@ console.log(`Test 3 - airport is full you can't land`);
 //Arrange
 airport = new Airport();
 item = {id: `plane`}
-expected = 'The Airport is at maximum capacity';
+expected = 'The Airport capacity is full';
 //Act
 airport.add(plane);
 airport.add(plane);
@@ -197,4 +197,27 @@ expected = undefined;
 actual = undefined;
 result = undefined;
 plane1 = null;
+
+
+// Test 8 -  will the string return true if the plane exists in airport?
+console.log(`============================`);
+
+console.log(`Test 8 - will planeAlreadyExists return true`);
+
+//Arrange
+airport = new Airport();
+plane1 = new Plane(plane)
+expected = true;
+//Act
+airport.planeLanded(plane);
+actual = airport.planeAlreadyExists(plane);
+//Assert
+result =  assertTrue(actual);
+console.log(`Test 8 : will planeAlreadyExists return true ${result}`);
+//Clean up
+airport = null;
+plane = null;
+expected = undefined;
+actual = undefined;
+result = undefined;
 

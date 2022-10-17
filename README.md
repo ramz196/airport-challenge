@@ -51,7 +51,7 @@ As the system designer
 So that the software can be used for many different airports
 I would like a default airport capacity that can be overridden as appropriate
 | object    |     properties              |     messages                  |     output     |
-|  airport  | Capacity@integer            |constructor @integer)          | @void          |
+|  airport  | Capacity@integer            |constructor capacity@integer)  | @void          |
 
 1.Test that the default capacity is set for the airport
 2.Test to make sure the capacity is changeable
@@ -59,12 +59,13 @@ I would like a default airport capacity that can be overridden as appropriate
 As an air traffic controller
 To ensure safety
 I want to prevent landing when the airport is full
-| object    |     properties              |     messages                  |     output     |
-|  airport  | airportPlanes@Array[@string]| Airport capacity is full?     | @boolean       |
-|           |  capacity @integer          | AirportisFull()               | @boolean       |     
-|  plane    |   id@string                 |                               |                |
+| object    |     properties              |     messages                     |     output     |
+|  airport  | airportPlanes@Array[@string]| planeLanded(AirportIsFull()@plane| @string        |
+|           |  capacity @integer          | airportisFull()                  | @boolean       |     
+|  plane    |   planeID@string                 |                                  |                |
 
 1. Test that if capacity of airport exceeds capacity, the plane will not be added to the array
+2. Test that if airportIsFull is true it will prevent planes from landing
 
 As an air traffic controller
 So I can get passengers on the way to their destination
@@ -72,7 +73,7 @@ I want to instruct the airport to let a plane take off and confirm that it is no
 
 | object    |     properties              |     messages                  |     output     |
 |  airport  | airportPlanes@array[@string]| planeTakeoff@integer)         | @void          |
-|  plane    | flightID @string            |                               |                |
+|  plane    | planeID @string            |                               |                |
 
 1. Test that plane has taken off from Airport by checking the length of the airport has decreased
 2. Test that a string returns that the plane has departed from the airport and no longer exists. 
@@ -85,7 +86,7 @@ I want to prevent asking the airport to let planes take-off which are not at the
 |  airport  | airportPlanes@Array[@string]| planeLanded                   | @string        |
 |           |                             | planeDeparted                 | @string        |
 |           |                             | planeAlreadyExists            | @boolean       |
-|  plane    |   ID@string                 |                               |                |
+|  plane    |   planeID@string                 |                               |                |
 
 1. Testing that the plane has landed and exists within Airport to return a string
 2. Test that departed plane string appears when plane attempts to leave airport.

@@ -22,7 +22,7 @@ class Airport {
   }
 
 
-  isAirportFull() {
+  airportIsFull() {
     let full = false;
     if (this.airportPlanes.length === this.capacity) {
       full = true;
@@ -30,7 +30,7 @@ class Airport {
   }
 
   planeLanded(plane) {
-    if (this.isAirportFull()) {
+    if (this.airportIsFull()) {
       return `The airport ${plane.planeID()} is at maximum capacity and is unable to land`;
     } else {
       this.airportPlanes.push(plane);
@@ -39,8 +39,16 @@ class Airport {
   }
   planeDeparted(plane) {
     this.airportPlanes.splice(this.airportPlanes.indexOf(plane));
-  
     //return `The plane ${plane.planeID()} has departed from the airport`
+  }
+  planeAlreadyExists(plane) {
+    let planeAlreadyExists = false;
+    for (let flight of this.airportPlanes) {
+      if (flight.planeID() === plane.planeID()) {
+        planeAlreadyExists = true;
+      }
+      return planeAlreadyExists;
+    }
   }
 };
 
