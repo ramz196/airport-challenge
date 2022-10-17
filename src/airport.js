@@ -20,15 +20,25 @@ class Airport {
  subtract = plane => {
         this.airportPlanes.splice(this.airportPlanes.indexOf(plane));
   } 
+
+
   isAirportFull() { 
-    
-  }
-  planeLanded(plane) {
-    this.airportPlanes.push(plane);
-    return `The plane ${this.airportPlanes[0].planeID()} has landed`;
+    let full = false;
+    if (this.airportPlanes.length === this.capacity) {
+      full = true;
+    } return full;
   }
 
+  planeLanded(plane) {
+    if (this.isAirportFull()) {
+    return `The airport ${plane.planeID()} is at maximum capacity and is unable to land`;
+    } else {
+      this.airportPlanes.push(plane);
+      return `The plane ${this.airportPlanes[0].planeID()} has landed`;
+  } 
   
+  
+  }
 
 }
 

@@ -9,6 +9,10 @@ let result;
 let airport;
 let plane;
 let sizeIncrease;
+let plane1;
+let plane2;
+let plane3;
+let plane4;
 
 
 
@@ -107,14 +111,14 @@ result = undefined;
 // Test 5 -  will the airport return true if the airport is full?
 console.log(`============================`);
 
-console.log(`Test 4 - testing the isAirportfull function to return true at full capacity`);
+console.log(`Test 5 - testing the isAirportfull function to return true at full capacity`);
 
 //Arrange
 airport = new Airport();
-plane = new plane(plane1)
-plane = new plane(plane2)
-plane = new plane(plane3)
-plane = new plane(plane4)
+plane = new Plane(plane1)
+plane = new Plane(plane2)
+plane = new Plane(plane3)
+plane = new Plane(plane4)
 expected = true;
 //Act
 airport.planeLanded(plane1);
