@@ -108,7 +108,7 @@ expected = undefined;
 actual = undefined;
 result = undefined;
 
-// Test 5 -  will the airport return true if the airport is full?
+//Test 5 -  will the airport return true if the airport is full?
 console.log(`============================`);
 
 console.log(`Test 5 - testing the isAirportfull function to return true at full capacity`);
@@ -129,6 +129,38 @@ actual = airport.isAirportFull();
 //Assert
 result =  assertTrue(actual);
 console.log(`Test 5 : testing the isAirportfull function to return true at full capacity ${result}`);
+//Clean up
+airport = null;
+plane = null;
+expected = undefined;
+actual = undefined;
+result = undefined;
+plane1 = null;
+plane2 = null;
+plane3 = null;
+plane4 = null;
+
+// Test 6 -  will planeLanded stop a plane from landing if the airport is full?
+console.log(`============================`);
+
+console.log(`Test 6 - if isAirportfull is true this plane can't land`);
+
+//Arrange
+airport = new Airport();
+plane1 = new Plane(plane1)
+plane2 = new Plane(plane2)
+plane3 = new Plane(plane3)
+plane4 = new Plane(plane4)
+expected = 'Airport is at maximum capacity so the plane wont be able to land';
+//Act
+airport.planeLanded(plane1);
+airport.planeLanded(plane2);
+airport.planeLanded(plane3);
+airport.planeLanded(plane4);
+actual = airport.isAirportFull();
+//Assert
+result =  assertTrue(actual);
+console.log(`Test 6 : if isAirportfull is true this plane can't land ${result}`);
 //Clean up
 airport = null;
 plane = null;

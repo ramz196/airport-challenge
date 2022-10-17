@@ -34,9 +34,9 @@ class Airport {
     return `The airport ${plane.planeID()} is at maximum capacity and is unable to land`;
     } else {
       this.airportPlanes.push(plane);
-      return `The plane ${this.airportPlanes[0].planeID()} has landed`;
+      return `The plane ${this.airportPlanes[0]} has landed`;
   } 
-  
+
   
   }
 
